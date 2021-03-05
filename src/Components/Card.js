@@ -4,18 +4,13 @@ const Card = (props) => {
 
     const {
         card: {name, imagesrc},
+        gameLogic
     } = props;
 
-    const [isClicked, setisClicked] = useState(false);
-
-    const clickCard = () => {
-        setisClicked(true);
-    }
-
     return (
-        <div onClick={clickCard} className="card">
+        <div onClick={gameLogic} className="card">
             <h2>{name}</h2>
-            <img src={imagesrc} alt={props.name}/>
+            <img src={imagesrc} alt={name}/>
         </div>
     )
 }
