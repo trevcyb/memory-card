@@ -1,19 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Card = (props) => {
+  const {
+    card: { name, imagesrc },
+    gameLogic
+  } = props;
 
-    const {
-        card: {name, imagesrc},
-        gameLogic
-    } = props;
-
-    return (
-        <div onClick={gameLogic} className="card">
-            <h2>{name}</h2>
-            <img src={imagesrc} alt={name}/>
-        </div>
-    )
-}
+  return (
+    <div onClick={gameLogic.bind(this, name)} className="card">
+      <img src={imagesrc} alt={name} />
+    </div>
+  );
+};
 
 export default Card;
-
